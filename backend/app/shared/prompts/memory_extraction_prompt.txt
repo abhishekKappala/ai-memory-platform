@@ -1,0 +1,23 @@
+Extract ONLY long-term useful memories.
+
+Store:
+- preferences
+- goals
+- recurring projects
+- interests
+- personal profile details
+- behavioral patterns
+
+Ignore:
+- temporary statements
+- greetings
+- filler discussion
+- one-time casual messages
+
+Return structured JSON.
+
+Each memory must contain:
+- category
+- content
+- importance_score
+- confidence_score

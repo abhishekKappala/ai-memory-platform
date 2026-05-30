@@ -1,0 +1,16 @@
+Summarize the following conversation chunk.
+
+Keep:
+- important discussion topics
+- goals
+- preferences
+- projects
+- decisions
+- ongoing tasks
+
+Avoid:
+- casual filler
+- greetings
+- repetitive statements
+
+Create concise episodic memory summaries.

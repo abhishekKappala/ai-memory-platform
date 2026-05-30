@@ -4,7 +4,7 @@
 
 AI Memory Platform is a scalable AI assistant backend system designed to support long-term personalized memory for users.
 
-The goal of this project is to build a production-grade AI infrastructure where each user has isolated memory storage and contextual retrieval using Retrieval-Augmented Generation (RAG).
+The goal of this project is to build a production-grade AI infrastructure where each user has isolated memory storage and contextual retrieva   l using Retrieval-Augmented Generation (RAG).
 
 The system is being developed with a modular and scalable architecture suitable for future extensions such as:
 

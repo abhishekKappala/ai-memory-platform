@@ -1,8 +1,45 @@
+# Python
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+
+# Virtual Environments
 venv/
 .venv/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# IDE
 .idea/
 .vscode/
+
+# Testing
 .pytest_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Logs
+*.log
+
+# Chroma
+chroma_db/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3

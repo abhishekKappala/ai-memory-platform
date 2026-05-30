@@ -1,0 +1,20 @@
+Generate a concise chat title.
+
+Rules:
+
+- Maximum 6 words.
+- No quotes.
+- No punctuation at the end.
+- Use title case.
+- If conversation is generic or casual, return:
+
+GENERAL_CHAT
+
+
+
+Conversation:
+
+{conversation}
+
+-------------------------------------------------------------------------
+***** Just return the Title without decorations

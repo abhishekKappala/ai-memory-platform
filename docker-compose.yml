@@ -1,9 +1,113 @@
-version: '3.9'
+version: "3.9"
 
 services:
+
   backend:
-    build: ./backend
+
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
     ports:
       - "8000:8000"
+
+    env_file:
+      - ./backend/.env
+
+    depends_on:
+      - postgres
+      - redis
+
+
+  postgres:
+
+    image: postgres:16
+
+    container_name: ai_memory_postgres
+
+    restart: always
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ai_memory_db
+
+    ports:
+      - "5432:5432"
+
     volumes:
-      - ./backend:/app
+      - postgres_data:/var/lib/postgresql/data
+
+
+  redis:
+
+    image: redis:7
+
+    restart: always
+
+    ports:
+      - "6379:6379"
+
+
+volumes:
+
+  postgres_data:
+
+
+# 2..................................................
+# version: '3.9'
+
+# services:
+
+#   backend:
+#   build:
+#     context: ./backend
+#     dockerfile: Dockerfile
+
+#   ports:
+#     - "8000:8000"
+
+#   env_file:
+#     - ./backend/.env
+
+#   depends_on:
+#     - postgres
+#     - redis
+
+
+#   postgres:
+#     image: postgres:16
+#     container_name: ai_memory_postgres
+#     restart: always
+
+#     environment:
+#       POSTGRES_USER: admin
+#       POSTGRES_PASSWORD: password
+#       POSTGRES_DB: ai_memory_db
+
+#     ports:
+#       - "5432:5432"
+
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+  
+#   redis:
+#     image: redis:7
+
+#     ports:
+#       - "6379:6379"
+
+#     restart: always
+
+
+
+# 1............................................................
+# version: '3.9'
+
+# services:
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./backend:/app
