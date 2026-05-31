@@ -24,9 +24,14 @@ from app.models.memory import Memory
 config = context.config
 
 
+sync_url = settings.DATABASE_URL.replace(
+    "postgresql+asyncpg://",
+    "postgresql://"
+)
+
 config.set_main_option(
     "sqlalchemy.url",
-    settings.DATABASE_URL
+    sync_url
 )
 
 # Interpret the config file for Python logging.
