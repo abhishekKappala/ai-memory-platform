@@ -24,9 +24,10 @@ from app.models.memory import Memory
 config = context.config
 
 
-sync_url = settings.DATABASE_URL.replace(
-    "postgresql+asyncpg://",
-    "postgresql://"
+sync_url = (
+    settings.DATABASE_URL
+    .replace("postgresql+asyncpg://", "postgresql://")
+    .replace("?ssl=require", "?sslmode=require")
 )
 
 config.set_main_option(
