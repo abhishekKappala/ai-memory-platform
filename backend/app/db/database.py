@@ -7,7 +7,11 @@ DATABASE_URL = settings.DATABASE_URL
 
 engine = create_async_engine(
     DATABASE_URL,
-    echo=True
+    echo=True,
+    pool_pre_ping=True,   # ← KEY FIX: checks if connection is alive before using it
+    pool_recycle=300,     # ← recycles connections every 5 min
+    pool_size=5,
+    max_overflow=10,
 )
 
 AsyncSessionLocal = sessionmaker(

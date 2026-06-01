@@ -1,29 +1,29 @@
-import axios
-from "axios";
+import axios from "axios";
 
-export const api =
-axios.create({
+console.log(
+  "NEXT_PUBLIC_API_URL =",
+  process.env.NEXT_PUBLIC_API_URL
+);
 
+export const api = axios.create({
   baseURL:
-  "http://localhost:8000"
+    process.env.NEXT_PUBLIC_API_URL,
 });
-
 
 api.interceptors.request.use(
+  (config) => {
 
-(config)=>{
+    const token =
+      localStorage.getItem(
+        "token"
+      );
 
-  const token=
-    localStorage.getItem(
-      "token"
-    );
+    if (token) {
 
-  if(token){
+      config.headers.Authorization =
+        `Bearer ${token}`;
+    }
 
-    config.headers.Authorization=
-
-      `Bearer ${token}`;
+    return config;
   }
-
-  return config;
-});
+);
