@@ -77,7 +77,8 @@ app.add_middleware(
 
     allow_origins=[
 
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "https://ai-memory-platform-nine.vercel.app"
     ],
 
     allow_credentials=True,
@@ -104,43 +105,3 @@ async def health_check():
     return {
         "status": "healthy"
     }
-
-# 2......................................................................
-# from fastapi import FastAPI
-
-# from app.api.auth import router as auth_router
-
-# app = FastAPI(
-#     title="AI Memory Platform",
-#     version="1.0.0"
-# )
-
-# app.include_router(auth_router)
-
-# @app.get("/")
-# async def root():
-#     return {
-#         "message": "AI Memory Platform Running"
-#     }
-
-# @app.get("/health")
-# async def health_check():
-#     return {
-#         "status": "healthy"
-#     }
-
-
-# 1..............................................................
-# from fastapi import FastAPI
-
-# app = FastAPI(title="AI Memory Platform", version="1.0.0")
-
-
-# @app.get("/")
-# async def root():
-#     return {"message": "AI Memory Platform Running"}
-
-
-# @app.get("/health")
-# async def health_check():
-#     return {"status": "healthy"}
