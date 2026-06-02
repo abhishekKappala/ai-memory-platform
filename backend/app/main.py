@@ -78,7 +78,9 @@ app.add_middleware(
     allow_origins=[
 
         "http://localhost:3000",
-        "https://ai-memory-platform-nine.vercel.app"
+        "https://ai-memory-platform-nine.vercel.app",
+        "https://ai-memory-platform-jwrd.vercel.app",
+        "https://ai-memory-platform-jwrd-5c1ft8dol.vercel.app"
     ],
 
     allow_credentials=True,
