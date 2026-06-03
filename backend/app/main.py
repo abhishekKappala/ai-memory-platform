@@ -81,7 +81,7 @@ app.add_middleware(
         "https://ai-memory-platform-nine.vercel.app",
         "https://ai-memory-platform-jwrd.vercel.app",
         "https://ai-memory-platform-jwrd-5c1ft8dol.vercel.app",
-        "https://ai-memory-platform-jwrd-89t7faxdy.vercel.app/"
+        "https://ai-memory-platform-jwrd-89t7faxdy.vercel.app"
     ],
 
     allow_credentials=True,
